@@ -1,0 +1,19 @@
+.content-container {
+  transition: $sidebar-transition;
+}
+
+.content-container--move {
+  margin-left: 152px;
+}
+
+.sidebar__button {
+  position: absolute;
+  margin-left: 12px; // position: relative;
+  top: 7px;
+  transition: $sidebar-transition;
+  z-index: 1000;
+}
+
+.sidebar_button--open {
+  margin-left: 160px;
+}

@@ -1,33 +1,11 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
+// import '../assets/Sidebar.scss';
 
-
-class Sidebar extends PureComponent {
-  state = {
-    open: false,
-  }
-
-  toggleSidebar = () => {
-    this.setState(prevState => {
-      return {
-        open: !prevState.open,
-      }
-    })
-  }
-
-  render() {
-    return (
-      <div className="sidebar">
-        <button
-          className="sidebar__button"
-          onClick={this.toggleSidebar}
-        >
-          {
-            this.state.open ? '<' : '>'
-          }
-        </button>
-      </div>
-    )
-  }
+const Sidebar = ({open}) => {
+  return (
+    <div className={`sidebar-container ${open ? "sidebar-container--open" : ""}`}>
+    </div>
+  )
 }
 
 export default Sidebar;
