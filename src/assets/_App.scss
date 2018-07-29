@@ -3,7 +3,7 @@
 }
 
 .content-container--move {
-  margin-left: 152px;
+  margin-left: $sidebar-width;
 }
 
 .sidebar__button {
@@ -11,9 +11,12 @@
   margin-left: 12px; // position: relative;
   top: 7px;
   transition: $sidebar-transition;
-  z-index: 1000;
 }
 
 .sidebar_button--open {
-  margin-left: 160px;
+  margin-left: $sidebar-width + 10;
+}
+
+.main-content {
+  padding-left: 10px;
 }

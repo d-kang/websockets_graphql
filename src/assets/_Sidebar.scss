@@ -1,16 +1,29 @@
 .sidebar-container {
   height: 100vh;
   width: 0px;
+  z-index: 1000;
   border: 2px solid #333;
+  border-left: none;
   left: 0;
   position: absolute;
   transition: $sidebar-transition;
+  overflow: hidden;
+  margin-top: $navbar-height + 2;
+  .friendslist__friend {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 2px solid #444; // fixes double borders
+    &:last-of-type {
+      border-bottom: 2px solid #444;
+    }
+    &:first-of-type {
+      border-top: none;
+    }
+  }
 }
 
 .sidebar-container--open {
-  width: 148px;
+  width: $sidebar-width;
+  border-right: 2px solid #333;
 }
-
-.nav-container {}
-
-.content-container {}

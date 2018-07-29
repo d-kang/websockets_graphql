@@ -1,9 +1,20 @@
 import React from 'react';
-// import '../assets/Sidebar.scss';
+import ChatBox from './ChatBox'
 
-const Sidebar = ({open}) => {
+const Sidebar = ({open, friendsList, ...props}) => {
   return (
     <div className={`sidebar-container ${open ? "sidebar-container--open" : ""}`}>
+      {
+        friendsList.map((friend, i) => {
+          return (
+            <ChatBox
+              key={i}
+              friend={friend}
+              {...props}
+            />
+          )
+        })
+      }
     </div>
   )
 }
