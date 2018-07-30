@@ -5,3 +5,11 @@ body {
   font-family: sans-serif;
   font-size: 16px;
 }
+
+
+/* border-box set on * or body, means all elements will use content+padding+border when calculating height and width
+*/
+
+* {
+  box-sizing: border-box;
+}

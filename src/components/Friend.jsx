@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 
-class ChatBox extends PureComponent {
+class Friend extends PureComponent {
   handleClick = () => {
     const {
       friend: { uuid, name },
@@ -21,7 +21,6 @@ class ChatBox extends PureComponent {
       friend: { uuid, name },
     } = this.props;
 
-    console.log('uuid: ', uuid);
     return (
       <div key={uuid} className="friendslist__friend" onClick={this.handleClick}>
         <span>{name}</span>
@@ -30,4 +29,4 @@ class ChatBox extends PureComponent {
   }
 }
 
-export default ChatBox;
+export default Friend;

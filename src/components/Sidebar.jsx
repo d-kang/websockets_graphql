@@ -1,5 +1,5 @@
 import React from 'react';
-import ChatBox from './ChatBox'
+import Friend from './Friend'
 
 const Sidebar = ({open, friendsList, ...props}) => {
   return (
@@ -7,7 +7,7 @@ const Sidebar = ({open, friendsList, ...props}) => {
       {
         friendsList.map((friend, i) => {
           return (
-            <ChatBox
+            <Friend
               key={i}
               friend={friend}
               {...props}

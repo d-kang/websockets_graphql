@@ -5,27 +5,27 @@ import Sidebar from './Sidebar.jsx'
 
 const friendsList = [
   {
-    name: 'zero',
+    name: 'Erica',
     uuid: '00'
   },
   {
-    name: 'one',
+    name: 'Andrew',
     uuid: '11'
   },
   {
-    name: 'two',
+    name: 'Josh',
     uuid: '22'
   },
   {
-    name: 'three',
+    name: 'Jessica',
     uuid: '33'
   },
   {
-    name: 'four',
+    name: 'Brian',
     uuid: '44'
   },
   {
-    name: 'five',
+    name: 'Alex',
     uuid: '55'
   },
 ]
@@ -86,9 +86,18 @@ class App extends Component {
         <div className={`content-container ${open ? "content-container--move" : ""}`}>
           <Nav />
           <div className="main-content">
-            {
-              chatOverlay.map((chat, i) => <div key={i} className="chatbox">{chat.name}</div>)
-            }
+
+
+            <div className="foo">container 1</div>
+            <div className="foo">container 2</div>
+            <div className="foo">container 3</div>
+
+            <div className="chat-overlay-container">
+              {
+                chatOverlay.map((chat, i) =>
+                  <div key={i} className="chatbox">{chat.name}</div>)
+              }
+            </div>
           </div>
 
         </div>
