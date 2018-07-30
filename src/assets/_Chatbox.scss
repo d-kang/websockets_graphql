@@ -1,6 +1,40 @@
+$chatbox-width: 15rem;
+$chatbox-height: 25rem;
+$border: 1px solid #333;
+$chatbox-title-height: 20px;
+$chatbox-form-height: 50px;
 .chat-overlay-container {
   display: flex;
   .chatbox {
-    border: 1px solid #333;
+    height: $chatbox-height;
+    width: $chatbox-width;
+    border: $border;
+    text-align: center;
+  }
+  .chatbox-messages {
+    height: calc(#{$chatbox-height} - #{$chatbox-form-height} - #{$chatbox-title-height});
+    border-bottom: $border;
+  }
+  form {
+    display: flex;
+    border: $border;
+    height: $chatbox-form-height;
+    input {
+      flex: 2 1 auto;
+      /* (<flex-grow> | <flex-shrink> | <flex-basis>) */
+    }
+  }
+}
+
+.chatbox-title {
+  height: $chatbox-title-height;
+  display: flex;
+  border-bottom: $border;
+  &:nth-child(1) {
+    padding-left: 2px;
+  }
+  .chatbox-title__button {
+    margin-left: auto;
+    padding-right: 2px;
   }
 }

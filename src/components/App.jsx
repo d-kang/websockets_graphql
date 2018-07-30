@@ -95,7 +95,20 @@ class App extends Component {
             <div className="chat-overlay-container">
               {
                 chatOverlay.map((chat, i) =>
-                  <div key={i} className="chatbox">{chat.name}</div>)
+                  <div key={i} className="chatbox">
+                    <span className="chatbox-title">
+                      {chat.name}
+                      <span className="chatbox-title__button">^</span>
+                    </span>
+
+                    <div className="chatbox-messages"></div>
+
+                    <form action="">
+                      <input type="text"/>
+                      <button>chat</button>
+                    </form>
+
+                  </div>)
               }
             </div>
           </div>
