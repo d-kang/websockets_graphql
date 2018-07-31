@@ -1,6 +1,5 @@
 .sidebar-container {
   height: $below-navbar-height;
-  width: 0px;
   z-index: 1000;
   border: 2px solid #333;
   border-left: none;
@@ -8,7 +7,7 @@
   position: absolute;
   transition: $sidebar-transition;
   overflow: hidden;
-  margin-top: $navbar-height + 2;
+  margin-top: $navbar-height;
   .friendslist__friend {
     width: 100%;
     padding: 20px 0;

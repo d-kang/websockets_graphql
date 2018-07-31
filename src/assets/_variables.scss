@@ -1,5 +1,5 @@
 $sidebar-transition: .3s all ease-in-out;
-$navbar-height: 29px;
+$navbar-height: 30px;
 $sidebar-width: 150px;
-$below-navbar-height: calc(100vh - 35px);
+$below-navbar-height: calc(100vh - #{$navbar-height});
 // $below-navbar-height: calc(100vh - #{$navbar-height});

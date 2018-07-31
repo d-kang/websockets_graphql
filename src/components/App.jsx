@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 // import '../assets/App.scss';
 import Nav from './Nav.jsx';
 import Sidebar from './Sidebar.jsx'
-
+import ChatOverlay from './ChatOverlay.jsx'
+import {AppContext} from './context'
 const friendsList = [
   {
     name: 'Erica',
@@ -29,6 +30,10 @@ const friendsList = [
     uuid: '55'
   },
 ]
+
+
+
+
 class App extends Component {
   state = {
     sidebarOpen: false,
@@ -54,9 +59,31 @@ class App extends Component {
   }
 
   setOverlay = (friend) => {
+    const friendState = {
+      ...friend,
+      chatboxOpen: false,
+    }
+
     this.setState(prevState => {
       return {
-        chatOverlay: [...prevState.chatOverlay, friend]
+        chatOverlay: [...prevState.chatOverlay, friendState]
+      }
+    })
+  }
+
+  openChatbox = (userId) => {
+    this.setState(prevState => {
+      const copy = prevState.chatOverlay.slice()
+
+      for (let i = 0; i < copy.length; i++) {
+        const user = copy[i];
+        if (user.uuid === userId) {
+          user.chatboxOpen = !user.chatboxOpen
+          break;
+        }
+      }
+      return {
+        chatOverlay: [...copy],
       }
     })
   }
@@ -67,8 +94,18 @@ class App extends Component {
       friendsList,
       chatOverlay,
     } = this.state;
+
+    const value = {
+      chatOverlay,
+      openChatbox: this.openChatbox,
+    }
+
+    console.log('APP', this.state.chatOverlay[0])
+
     return (
-      <div>
+      <AppContext.Provider value={value}>
+        <div className="app-container">
+
         <Sidebar
           open={open}
           friendsList={friendsList}
@@ -87,34 +124,27 @@ class App extends Component {
           <Nav />
           <div className="main-content">
 
-
             <div className="foo">container 1</div>
             <div className="foo">container 2</div>
             <div className="foo">container 3</div>
+            <div className="foo">container 4</div>
+            <div className="foo">container 5</div>
+            <div className="foo">container 6</div>
+            <div className="foo">container 7</div>
+            <div className="foo">container 8</div>
+            <div className="foo">container 3</div>
+            <div className="foo">container 3</div>
+            <div className="foo">container 3</div>
+            <div className="foo">container 3</div>
+            <div className="foo">container 3</div>
+            <div className="foo">container 3</div>
 
-            <div className="chat-overlay-container">
-              {
-                chatOverlay.map((chat, i) =>
-                  <div key={i} className="chatbox">
-                    <span className="chatbox-title">
-                      {chat.name}
-                      <span className="chatbox-title__button">^</span>
-                    </span>
-
-                    <div className="chatbox-messages"></div>
-
-                    <form action="">
-                      <input type="text"/>
-                      <button>chat</button>
-                    </form>
-
-                  </div>)
-              }
-            </div>
+            <ChatOverlay />
           </div>
 
         </div>
-      </div>
+        </div>
+      </AppContext.Provider>
     );
   }
 }

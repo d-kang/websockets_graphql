@@ -5,8 +5,7 @@ $chatbox-title-height: 20px;
 $chatbox-form-height: 50px;
 .chat-overlay-container {
   display: flex;
-  // position: absolute;
-  bottom: 4px;
+  z-index: 1000;
 }
 
 .chatbox {
@@ -14,18 +13,19 @@ $chatbox-form-height: 50px;
   width: $chatbox-width;
   border: $border;
   text-align: center;
-  .chatbox-messages {
-    // display: none;
-    background-color: rebeccapurple;
-  }
   form {
-    background-color: rebeccapurple;
     display: none;
-  }
-  .chatbox-title {
-    background-color: rebeccapurple;
-  }
-  // position: relative;
+  } // transition: $sidebar-transition;
+  z-index: 1000;
+}
+
+.chatbox--close {
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: $chatbox-title-height;
+  z-index: 1000;
 }
 
 .chatbox--open {
@@ -43,14 +43,7 @@ $chatbox-form-height: 50px;
       /* (<flex-grow> | <flex-shrink> | <flex-basis>) */
     }
   }
-}
-
-.chatbox--close {
-  display: flex;
-  justify-content: column;
-  align-content: flex-end;
-  max-height: $chatbox-title-height;
-  overflow: hidden;
+  z-index: 1000;
 }
 
 .chatbox-title {

@@ -1,14 +1,14 @@
 .main-content {
   display: flex; //
   flex-direction: column; // align-content: flex-end;
-  justify-content: flex-end;
+  // justify-content: flex-end;
   border: 5px slateblue solid;
   height: $below-navbar-height; // look up how to do calc with a variable
 
 }
 
 .chat-overlay-container {
-  border: 1px purple dotted;
+  // border: 1px purple dotted;
   margin-top: auto;
 }
 

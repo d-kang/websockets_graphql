@@ -6,10 +6,19 @@ body {
   font-size: 16px;
 }
 
-
 /* border-box set on * or body, means all elements will use content+padding+border when calculating height and width
 */
 
-* {
+:root {
   box-sizing: border-box;
 }
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+// body * + * {
+//   margin-top: 0em;
+// }

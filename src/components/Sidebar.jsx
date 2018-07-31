@@ -20,3 +20,6 @@ const Sidebar = ({open, friendsList, ...props}) => {
 }
 
 export default Sidebar;
+
+
+
